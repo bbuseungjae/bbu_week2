@@ -14,7 +14,7 @@
     }
 
     function introHobby() {
-      return `제 취미는 러닝입니다.`;      // 템플릿 리터럴 사용
+      return `제 취미는 영화 보기입니다.`;      // 템플릿 리터럴 사용
     }
 
     function introGoal() {
@@ -30,8 +30,6 @@
       document.getElementById("intro").innerText = message;
       index = (index + 1) % intros.length;  // 함수 순환
     }, 3000);
-
-    // (4) 첫 번째 메시지 즉시 출력
     document.getElementById("intro").innerText = intros[index]();
   </script>
 </body>
