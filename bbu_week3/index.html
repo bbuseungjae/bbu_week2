@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Week3 Practice</title>
+</head>
+<body>
+  <!-- 화면에 자기소개글이 표시될 자리 -->
+  <h2 id="intro"></h2>
+
+  <script>
+
+    function introName() {
+      return `안녕하세요! 제 이름은 부승재 입니다.`;  // 템플릿 리터럴 사용
+    }
+
+    function introHobby() {
+      return `제 취미는 러닝입니다.`;      // 템플릿 리터럴 사용
+    }
+
+    function introGoal() {
+      return `제 나이는 25살입니다.`; // 템플릿 리터럴 사용
+    }
+
+    const intros = [introName, introHobby, introGoal];
+    let index = 0;
+
+ 
+    setInterval(() => { 
+      const message = intros[index]();  // 배열에서 함수 꺼내서 실행
+      document.getElementById("intro").innerText = message;
+      index = (index + 1) % intros.length;  // 함수 순환
+    }, 3000);
+
+    // (4) 첫 번째 메시지 즉시 출력
+    document.getElementById("intro").innerText = intros[index]();
+  </script>
+</body>
+</html>
